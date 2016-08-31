@@ -3,8 +3,10 @@
  */
 package com.goEuro.task.exception.handler;
 
-import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
 
 import com.goEuro.task.exception.BusinessException;
 import com.goEuro.task.exception.GoEuroBaseException;
@@ -16,30 +18,26 @@ import com.goEuro.task.exception.SystemException;
  * @author mustafa.kamel
  */
 @Aspect
+@Component
 public final class GoEuroExceptionHandler {
 
     /**
-     * Handle Business exception. For the current implementation it just print a message to console and exit the
-     * application
+     * Handle exception. For the current implementation it just print a message to console and exit the application
      *
      * @param ex the ex
      */
-    @AfterThrowing(pointcut = "execution(* com.goEuro.task..* (..))", throwing = "ex")
-    public void handleSystemException(final SystemException ex) {
-        final String message = "ClIENT ERROR: ";
-        doCommonHandling(ex, message);
-    }
 
-    /**
-     * Handle Business exception. For the current implementation it just print a message to console and exit the
-     * application
-     *
-     * @param ex the ex
-     */
-    @AfterThrowing(pointcut = "execution(* com.goEuro.task..* (..))", throwing = "ex")
-    public void handleBusinessException(final BusinessException ex) {
-        final String message = "APPLICATION ERROR: ";
-        doCommonHandling(ex, message);
+    @Around("execution(* com.goEuro.task..*.*(..))")
+    public void handleException(final ProceedingJoinPoint joinPoint) throws Throwable {
+        try {
+            joinPoint.proceed();
+        } catch (final SystemException ex) {
+            final String message = "ClIENT ERROR: ";
+            doCommonHandling(ex, message);
+        } catch (final BusinessException ex) {
+            final String message = "APPLICATION ERROR: ";
+            doCommonHandling(ex, message);
+        }
     }
 
     /**
@@ -47,8 +45,7 @@ public final class GoEuroExceptionHandler {
      * @param message
      */
     private void doCommonHandling(final GoEuroBaseException ex, final String message) {
-        message.concat(ex.getMessage());
-        System.out.println(message);
+        System.out.println(message.concat(ex.getMessage()));
         System.exit(0);
     }
 }

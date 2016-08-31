@@ -1,5 +1,7 @@
 package com.goEuro.task;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -34,10 +36,12 @@ public class GoEuroDevTestApplication implements CommandLineRunner {
     @Override
     public void run(final String... arg0) throws Exception {
 
-        if (arg0.length < 1) {
+        final String cityName = Arrays.stream(arg0).filter(arg -> !arg.contains("--spring.output.ansi.enabled")).findFirst().orElse(null);
+
+        if (cityName == null || cityName.isEmpty()) {
             throw GoEuroErros.NO_CITY_NAME_PROVIDED.buildException();
         }
-        final String cityName = arg0[0];
+
         goEuroLocationSuggestionService.writeSuggestedLocationsToFile(cityName);
 
     }
