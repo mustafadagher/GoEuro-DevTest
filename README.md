@@ -1,7 +1,7 @@
 # GoEuro-DevTest
 #####*The Go Euro developers test solution project.*
 
-GoEuro-DevTest-0.0.1-SNAPSHOT.jar is available under [Github Releases of this repo](/releases). You can download it [from here.](/releases/download/v0.0.1/GoEuro-DevTest-0.0.1-SNAPSHOT.jar)
+GoEuro-DevTest-0.0.1-SNAPSHOT.jar is available under [Github Releases of this repo](https://github.com/mustafadagher/GoEuro-DevTest/releases). You can download it [from here.](https://github.com/mustafadagher/GoEuro-DevTest/releases/download/v0.0.1/GoEuro-DevTest-0.0.1-SNAPSHOT.jar)
 
 It's a Java command line tool that takes as an input parameter a string:
 
