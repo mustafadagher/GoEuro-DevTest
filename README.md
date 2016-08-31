@@ -1,9 +1,15 @@
 # GoEuro-DevTest
-#####*The Go Euro developers test project.*
+#####*The Go Euro developers test solution project.*
 
-A Java command line tool that takes as an input parameter a string
+GoEuro-DevTest-0.0.1-SNAPSHOT.jar is available under [Github Releases of this repo](/releases). You can download it [from here.](/releases/download/v0.0.1/GoEuro-DevTest-0.0.1-SNAPSHOT.jar)
 
-java -jar GoEuroTest.jar "CITY_NAME"
+It's a Java command line tool that takes as an input parameter a string:
+
+java -jar GoEuro-DevTest-0.0.1-SNAPSHOT.jar "CITY_NAME"
+
+For Example:
+
+java -jar GoEuro-DevTest-0.0.1-SNAPSHOT.jar "Berlin"
 
 The program takes this string and queries with it our Location JSON API: The app should use this API endpoint:
 
