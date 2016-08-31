@@ -2,7 +2,6 @@ package com.goEuro.task;
 
 import java.util.Arrays;
 
-import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -28,7 +27,7 @@ public class GoEuroDevTestApplication implements CommandLineRunner {
         SpringApplication.run(GoEuroDevTestApplication.class, args);
     }
 
-    @Bean(name = "restTemplate", autowire = Autowire.BY_TYPE)
+    @Bean(name = "restTemplate")
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }

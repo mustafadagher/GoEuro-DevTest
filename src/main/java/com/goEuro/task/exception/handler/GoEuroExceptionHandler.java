@@ -28,9 +28,10 @@ public final class GoEuroExceptionHandler {
      */
 
     @Around("execution(* com.goEuro.task..*.*(..))")
-    public void handleException(final ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object handleException(final ProceedingJoinPoint joinPoint) throws Throwable {
+        Object obj = null;
         try {
-            joinPoint.proceed();
+            obj = joinPoint.proceed();
         } catch (final SystemException ex) {
             final String message = "ClIENT ERROR: ";
             doCommonHandling(ex, message);
@@ -38,6 +39,7 @@ public final class GoEuroExceptionHandler {
             final String message = "APPLICATION ERROR: ";
             doCommonHandling(ex, message);
         }
+        return obj;
     }
 
     /**
