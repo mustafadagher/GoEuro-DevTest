@@ -13,9 +13,11 @@ import com.goEuro.task.exception.GoEuroBaseException;
 public interface GoEuroLocationSuggestionService {
 
     /**
-     * Write locations to file.
+     * Gets the suggested locations.
      *
-     * @param location the location
+     * @param cityName the city name
+     * @return the suggested locations
+     * @throws GoEuroBaseException the go euro base exception
      */
-    void writeSuggestedLocationsToFile(String cityName) throws GoEuroBaseException;
+    void getSuggestedLocations(String cityName) throws GoEuroBaseException;
 }

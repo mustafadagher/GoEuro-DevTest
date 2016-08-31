@@ -10,154 +10,154 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Location {
-	@JsonProperty("_id")
-	private String id;
 
-	@JsonProperty("key")
-	private String key;
+    @JsonProperty("_id")
+    private String id;
 
-	@JsonProperty("name")
-	private String name;
+    @JsonProperty("key")
+    private String key;
 
-	@JsonProperty("fullName")
-	private String fullName;
+    @JsonProperty("name")
+    private String name;
 
-	@JsonProperty("iata_airport_code")
-	private String iataAirportCode;
+    @JsonProperty("fullName")
+    private String fullName;
 
-	@JsonProperty("type")
-	private String type;
+    @JsonProperty("iata_airport_code")
+    private String iataAirportCode;
 
-	@JsonProperty("country")
-	private String country;
+    @JsonProperty("type")
+    private String type;
 
-	@JsonProperty("locationId")
-	private String locationId;
+    @JsonProperty("country")
+    private String country;
 
-	@JsonProperty("inEurope")
-	private String inEurope;
+    @JsonProperty("locationId")
+    private String locationId;
 
-	@JsonProperty("countryCode")
-	private String countryCode;
+    @JsonProperty("inEurope")
+    private String inEurope;
 
-	@JsonProperty("coreCountry")
-	private String coreCountry;
+    @JsonProperty("countryCode")
+    private String countryCode;
 
-	@JsonProperty("distance")
-	private String distance;
+    @JsonProperty("coreCountry")
+    private String coreCountry;
 
-	@JsonProperty("geo_position")
-	private GeoPosition geoPosition;
+    @JsonProperty("distance")
+    private String distance;
 
-	public String getId() {
-		return id;
-	}
+    @JsonProperty("geo_position")
+    private GeoPosition geoPosition;
 
-	public void setId(final String id) {
-		this.id = id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public String getKey() {
-		return key;
-	}
+    public void setId(final String id) {
+        this.id = id;
+    }
 
-	public void setKey(final String key) {
-		this.key = key;
-	}
+    public String getKey() {
+        return key;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setKey(final String key) {
+        this.key = key;
+    }
 
-	public void setName(final String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getFullName() {
-		return fullName;
-	}
+    public void setName(final String name) {
+        this.name = name;
+    }
 
-	public void setFullName(final String fullName) {
-		this.fullName = fullName;
-	}
+    public String getFullName() {
+        return fullName;
+    }
 
-	public String getIataAirportCode() {
-		return iataAirportCode;
-	}
+    public void setFullName(final String fullName) {
+        this.fullName = fullName;
+    }
 
-	public void setIataAirportCode(final String iataAirportCode) {
-		this.iataAirportCode = iataAirportCode;
-	}
+    public String getIataAirportCode() {
+        return iataAirportCode;
+    }
 
-	public String getType() {
-		return type;
-	}
+    public void setIataAirportCode(final String iataAirportCode) {
+        this.iataAirportCode = iataAirportCode;
+    }
 
-	public void setType(final String type) {
-		this.type = type;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public String getCountry() {
-		return country;
-	}
+    public void setType(final String type) {
+        this.type = type;
+    }
 
-	public void setCountry(final String country) {
-		this.country = country;
-	}
+    public String getCountry() {
+        return country;
+    }
 
-	public String getLocationId() {
-		return locationId;
-	}
+    public void setCountry(final String country) {
+        this.country = country;
+    }
 
-	public void setLocationId(final String locationId) {
-		this.locationId = locationId;
-	}
+    public String getLocationId() {
+        return locationId;
+    }
 
-	public String getInEurope() {
-		return inEurope;
-	}
+    public void setLocationId(final String locationId) {
+        this.locationId = locationId;
+    }
 
-	public void setInEurope(final String inEurope) {
-		this.inEurope = inEurope;
-	}
+    public String getInEurope() {
+        return inEurope;
+    }
 
-	public String getCountryCode() {
-		return countryCode;
-	}
+    public void setInEurope(final String inEurope) {
+        this.inEurope = inEurope;
+    }
 
-	public void setCountryCode(final String countryCode) {
-		this.countryCode = countryCode;
-	}
+    public String getCountryCode() {
+        return countryCode;
+    }
 
-	public String getCoreCountry() {
-		return coreCountry;
-	}
+    public void setCountryCode(final String countryCode) {
+        this.countryCode = countryCode;
+    }
 
-	public void setCoreCountry(final String coreCountry) {
-		this.coreCountry = coreCountry;
-	}
+    public String getCoreCountry() {
+        return coreCountry;
+    }
 
-	public String getDistance() {
-		return distance;
-	}
+    public void setCoreCountry(final String coreCountry) {
+        this.coreCountry = coreCountry;
+    }
 
-	public void setDistance(final String distance) {
-		this.distance = distance;
-	}
+    public String getDistance() {
+        return distance;
+    }
 
-	public GeoPosition getGeoPosition() {
-		return geoPosition;
-	}
+    public void setDistance(final String distance) {
+        this.distance = distance;
+    }
 
-	public void setGeoPosition(final GeoPosition geoPosition) {
-		this.geoPosition = geoPosition;
-	}
+    public GeoPosition getGeoPosition() {
+        return geoPosition;
+    }
 
-	@Override
-	public String toString() {
-		return "City [id=" + id + ", key=" + key + ", name=" + name + ", fullName=" + fullName + ", iataAirportCode="
-				+ iataAirportCode + ", type=" + type + ", country=" + country + ", locationId=" + locationId
-				+ ", inEurope=" + inEurope + ", countryCode=" + countryCode + ", coreCountry=" + coreCountry
-				+ ", distance=" + distance + ", geoPosition=" + geoPosition + "]";
-	}
+    public void setGeoPosition(final GeoPosition geoPosition) {
+        this.geoPosition = geoPosition;
+    }
+
+    @Override
+    public String toString() {
+        return "Location [id=" + id + ", key=" + key + ", name=" + name + ", fullName=" + fullName + ", iataAirportCode=" + iataAirportCode + ", type=" + type
+                + ", country=" + country + ", locationId=" + locationId + ", inEurope=" + inEurope + ", countryCode=" + countryCode + ", coreCountry="
+                + coreCountry + ", distance=" + distance + ", geoPosition=" + geoPosition + "]";
+    }
 }

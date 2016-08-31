@@ -35,13 +35,17 @@ public class GoEuroDevTestApplication implements CommandLineRunner {
     @Override
     public void run(final String... arg0) throws Exception {
 
+        /*
+         * while running/debugging the project as a spring boot app, the args contains this argument
+         * "--spring.output.ansi.enabled"
+         */
         final String cityName = Arrays.stream(arg0).filter(arg -> !arg.contains("--spring.output.ansi.enabled")).findFirst().orElse(null);
 
-        if (cityName == null || cityName.isEmpty()) {
+        if (cityName == null || cityName.trim().isEmpty()) {
             throw GoEuroErros.NO_CITY_NAME_PROVIDED.buildException();
         }
 
-        goEuroLocationSuggestionService.writeSuggestedLocationsToFile(cityName);
+        goEuroLocationSuggestionService.getSuggestedLocations(cityName.trim());
 
     }
 }

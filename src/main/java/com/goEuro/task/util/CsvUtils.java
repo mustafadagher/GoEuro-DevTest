@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.goEuro.task.util;
 
 import java.io.FileWriter;
@@ -11,7 +8,7 @@ import com.goEuro.task.exception.GoEuroBaseException;
 import com.goEuro.task.exception.GoEuroErros;
 
 /**
- * The Class CsvUtils.
+ * The Class CsvUtils. Contains utils needed to generate a csv file for suggested locations
  *
  * @author mustafa.kamel
  */
@@ -37,18 +34,10 @@ public class CsvUtils {
             fileWriter.append(HEADER.toString());
             fileWriter.append(NEW_LINE);
 
-            for (final Location city : locations) {
-                fileWriter.append(city.getId());
-                fileWriter.append(DELIMITER);
-                fileWriter.append(city.getName());
-                fileWriter.append(DELIMITER);
-                fileWriter.append(city.getType());
-                fileWriter.append(DELIMITER);
-                fileWriter.append(city.getGeoPosition().getLatitude());
-                fileWriter.append(DELIMITER);
-                fileWriter.append(city.getGeoPosition().getLongitude());
-                fileWriter.append(NEW_LINE);
+            for (final Location location : locations) {
+                appendLocationEntry(fileWriter, location);
             }
+
             fileWriter.flush();
             fileWriter.close();
         } catch (final IOException ex) {
@@ -56,5 +45,18 @@ public class CsvUtils {
         }
 
         System.out.println("file created successfully.");
+    }
+
+    private static void appendLocationEntry(final FileWriter fileWriter, final Location location) throws IOException {
+        fileWriter.append(location.getId());
+        fileWriter.append(DELIMITER);
+        fileWriter.append(location.getName());
+        fileWriter.append(DELIMITER);
+        fileWriter.append(location.getType());
+        fileWriter.append(DELIMITER);
+        fileWriter.append(location.getGeoPosition().getLatitude());
+        fileWriter.append(DELIMITER);
+        fileWriter.append(location.getGeoPosition().getLongitude());
+        fileWriter.append(NEW_LINE);
     }
 }

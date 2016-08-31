@@ -28,13 +28,14 @@ public class GoEuroLocationSuggestionServiceImpl implements GoEuroLocationSugges
     private GoEuroApiClient goEuroApiClient;
 
     /**
-     * Write locations to csv file.
+     * Gets the suggested locations from the client and then writes them to csv file.
      *
-     * @param location the location
-     * @throws GoEuroBaseException
+     * @param cityName the city name
+     * @return Writes a csv file with the sugessted locations
+     * @throws GoEuroBaseException if no match found for the city name specified.
      */
     @Override
-    public void writeSuggestedLocationsToFile(final String cityName) throws GoEuroBaseException {
+    public void getSuggestedLocations(final String cityName) throws GoEuroBaseException {
         final Location[] locations = goEuroApiClient.getLocationSuggestions(cityName);
         if (locations == null || locations.length < 1) {
             throw GoEuroErros.NO_MATCH_FOUND.buildException();

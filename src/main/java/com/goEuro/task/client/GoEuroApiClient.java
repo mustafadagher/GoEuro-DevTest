@@ -25,7 +25,7 @@ public class GoEuroApiClient {
     private RestTemplate restTemplate;
 
     /**
-     * Gets the location suggestions.
+     * Gets the location suggestions from the API endpoint.
      *
      * @param cityName the city name
      * @return the location suggestions

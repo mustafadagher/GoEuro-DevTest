@@ -1,7 +1,7 @@
 package com.goEuro.task.exception;
 
 /**
- * The Enum GoEuroErros.
+ * The Enum GoEuroErros. Contains the common custom errors thrown within the application.
  *
  * @author mustafa.kamel
  */

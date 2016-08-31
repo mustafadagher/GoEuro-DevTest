@@ -22,7 +22,8 @@ import com.goEuro.task.exception.SystemException;
 public final class GoEuroExceptionHandler {
 
     /**
-     * Handle exception. For the current implementation it just print a message to console and exit the application
+     * Handle the GoEuro Exceptions. For the current implementation it just print a message to console and exit the
+     * application
      *
      * @param ex the ex
      */
@@ -42,10 +43,6 @@ public final class GoEuroExceptionHandler {
         return obj;
     }
 
-    /**
-     * @param ex
-     * @param message
-     */
     private void doCommonHandling(final GoEuroBaseException ex, final String message) {
         System.out.println(message.concat(ex.getMessage()));
         System.exit(0);
