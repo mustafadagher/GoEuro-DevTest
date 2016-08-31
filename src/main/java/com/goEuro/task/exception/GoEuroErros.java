@@ -14,7 +14,10 @@ public enum GoEuroErros {
     NO_MATCH_FOUND("No match found for the city:", ExceptionType.BUSINESS),
 
     /** The no city name provided. */
-    NO_CITY_NAME_PROVIDED("no city name provided in parameters.", ExceptionType.BUSINESS);
+    NO_CITY_NAME_PROVIDED("Ther's no city name provided in parameters.", ExceptionType.BUSINESS),
+
+    /** The empty url exception. */
+    EMPTY_URL_EXCEPTION("URL provided is empty", ExceptionType.BUSINESS);
 
     /** The description. */
     private String description;
