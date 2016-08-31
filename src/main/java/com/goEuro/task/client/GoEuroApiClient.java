@@ -18,7 +18,6 @@ import com.goEuro.task.exception.GoEuroErros;
 @Component
 public class GoEuroApiClient {
 
-    // FIXME add to property
     @Value(value = "${goEuro.location.api.endpoint.url}")
     private transient String url;
 
@@ -34,6 +33,10 @@ public class GoEuroApiClient {
      */
     public Location[] getLocationSuggestions(final String cityName) throws GoEuroBaseException {
         Location[] locations = null;
+
+        if (url == null && url.isEmpty()) {
+            throw GoEuroErros.EMPTY_URL_EXCEPTION.buildException();
+        }
 
         try {
             locations = restTemplate.getForObject(url.concat(cityName), Location[].class);

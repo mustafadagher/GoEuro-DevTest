@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.client.RestTemplate;
 
 import com.goEuro.task.exception.GoEuroErros;
@@ -15,6 +16,7 @@ import com.goEuro.task.service.GoEuroLocationSuggestionService;
  * @author mustafa.kamel
  */
 @SpringBootApplication
+@PropertySource("classpath:goEuro.properties")
 public class GoEuroDevTestApplication implements CommandLineRunner {
 
     @Autowired
