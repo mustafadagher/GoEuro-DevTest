@@ -17,7 +17,10 @@ public enum GoEuroErros {
     NO_CITY_NAME_PROVIDED("Ther's no city name provided in parameters.", ExceptionType.BUSINESS),
 
     /** The empty url exception. */
-    EMPTY_URL_EXCEPTION("URL provided is empty", ExceptionType.BUSINESS);
+    EMPTY_URL_EXCEPTION("URL provided is empty", ExceptionType.BUSINESS),
+
+    /** The file creation writing exception. */
+    FILE_CREATION_WRITING_EXCEPTION("Error while creating or writing the CSV file", ExceptionType.SYSTEM);
 
     /** The description. */
     private String description;
@@ -71,6 +74,10 @@ public enum GoEuroErros {
      * The Enum ExceptionType.
      */
     private static enum ExceptionType {
-        SYSTEM, BUSINESS;
+
+        /** The system. */
+        SYSTEM,
+        /** The business. */
+        BUSINESS;
     }
 }

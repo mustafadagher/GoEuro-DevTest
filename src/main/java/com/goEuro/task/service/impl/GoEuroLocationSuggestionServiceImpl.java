@@ -21,6 +21,8 @@ import com.goEuro.task.util.CsvUtils;
 @Service
 public class GoEuroLocationSuggestionServiceImpl implements GoEuroLocationSuggestionService {
 
+    private static final String CSV_EXT = ".csv";
+
     /** The go euro api client. */
     @Autowired
     private GoEuroApiClient goEuroApiClient;
@@ -37,7 +39,8 @@ public class GoEuroLocationSuggestionServiceImpl implements GoEuroLocationSugges
         if (locations == null || locations.length < 1) {
             throw GoEuroErros.NO_MATCH_FOUND.buildException();
         }
-        CsvUtils.writeToCsvFile(locations);
+        final String fileName = cityName.concat(CSV_EXT);
+        CsvUtils.writeToCsvFile(fileName, locations);
     }
 
 }
