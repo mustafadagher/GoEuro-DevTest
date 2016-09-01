@@ -34,7 +34,7 @@ public class GoEuroApiClient {
     public Location[] getLocationSuggestions(final String cityName) throws GoEuroBaseException {
         Location[] locations = null;
 
-        if (url == null && url.isEmpty()) {
+        if (url == null || url.isEmpty()) {
             throw GoEuroErros.EMPTY_URL_EXCEPTION.buildException();
         }
 
