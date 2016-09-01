@@ -1,11 +1,11 @@
 # GoEuro-DevTest
 #####*The Go Euro developers test solution project.*
 
-GoEuro-DevTest-0.0.1-SNAPSHOT.jar is available under [Github Releases of this repo](https://github.com/mustafadagher/GoEuro-DevTest/releases). You can download it [from here.](https://github.com/mustafadagher/GoEuro-DevTest/releases/download/v0.0.1/GoEuro-DevTest-0.0.1-SNAPSHOT.jar)
+GoEuro-DevTest-0.0.1-SNAPSHOT.jar is available under [Github Releases of this repo](https://github.com/mustafadagher/GoEuro-DevTest/releases/latest). You can download it [from here.](https://github.com/mustafadagher/GoEuro-DevTest/releases/download/v0.0.2/GoEuro-DevTest-0.0.2.jar)
 
 It's a Java command line tool that takes an input parameter as a string:
 
-java -jar GoEuro-DevTest-0.0.1-SNAPSHOT.jar "CITY_NAME"
+java -jar GoEuro-DevTest-0.0.2.jar "CITY_NAME"
 
 For Example:
 
