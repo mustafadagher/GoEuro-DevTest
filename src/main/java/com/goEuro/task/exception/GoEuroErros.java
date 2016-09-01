@@ -80,4 +80,12 @@ public enum GoEuroErros {
         /** The business. */
         BUSINESS;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public ExceptionType getType() {
+        return type;
+    }
 }
