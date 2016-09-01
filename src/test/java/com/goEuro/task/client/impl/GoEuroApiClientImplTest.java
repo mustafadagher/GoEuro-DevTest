@@ -1,4 +1,4 @@
-package com.goEuro.task.client;
+package com.goEuro.task.client.impl;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
