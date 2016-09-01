@@ -3,6 +3,8 @@ package com.goEuro.task.util;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.springframework.stereotype.Component;
+
 import com.goEuro.task.bo.Location;
 import com.goEuro.task.exception.GoEuroBaseException;
 import com.goEuro.task.exception.GoEuroErros;
@@ -12,6 +14,7 @@ import com.goEuro.task.exception.GoEuroErros;
  *
  * @author mustafa.kamel
  */
+@Component
 public class CsvUtils {
 
     private static final String DELIMITER = ", ";
@@ -26,7 +29,7 @@ public class CsvUtils {
      * @param locations the locations
      * @throws GoEuroBaseException if failed to create or write the CSV file
      */
-    public static void writeToCsvFile(final String fileName, final Location[] locations) throws GoEuroBaseException {
+    public void writeToCsvFile(final String fileName, final Location[] locations) throws GoEuroBaseException {
         FileWriter fileWriter = null;
 
         try {
@@ -47,7 +50,7 @@ public class CsvUtils {
         System.out.println("file created successfully.");
     }
 
-    private static void appendLocationEntry(final FileWriter fileWriter, final Location location) throws IOException {
+    private void appendLocationEntry(final FileWriter fileWriter, final Location location) throws IOException {
         fileWriter.append(location.getId());
         fileWriter.append(DELIMITER);
         fileWriter.append(location.getName());

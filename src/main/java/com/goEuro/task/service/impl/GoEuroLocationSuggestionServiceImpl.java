@@ -27,6 +27,9 @@ public class GoEuroLocationSuggestionServiceImpl implements GoEuroLocationSugges
     @Autowired
     private GoEuroApiClient goEuroApiClient;
 
+    @Autowired
+    private CsvUtils csvUtils;
+
     /**
      * Gets the suggested locations from the client and then writes them to csv file.
      *
@@ -41,7 +44,7 @@ public class GoEuroLocationSuggestionServiceImpl implements GoEuroLocationSugges
             throw GoEuroErros.NO_MATCH_FOUND.buildException();
         }
         final String fileName = cityName.concat(CSV_EXT);
-        CsvUtils.writeToCsvFile(fileName, locations);
+        csvUtils.writeToCsvFile(fileName, locations);
     }
 
 }
