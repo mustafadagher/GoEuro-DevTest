@@ -20,6 +20,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import com.goEuro.task.bo.Location;
+import com.goEuro.task.client.impl.GoEuroApiClientImpl;
 import com.goEuro.task.exception.BusinessException;
 import com.goEuro.task.exception.GoEuroBaseException;
 import com.goEuro.task.exception.GoEuroErros;
@@ -31,21 +32,21 @@ import com.goEuro.task.exception.SystemException;
  * @author mustafa.kamel
  */
 @RunWith(MockitoJUnitRunner.class)
-public class GoEuroApiClientTest {
+public class GoEuroApiClientImplTest {
 
     @InjectMocks
-    private GoEuroApiClient testee;
+    private GoEuroApiClientImpl testee;
 
     @Mock
     private RestTemplate restTemplate;
+
+    @Rule
+    public ExpectedException thrown = none();
 
     @Before
     public void setup() {
         ReflectionTestUtils.setField(testee, "url", "http://api.goeuro.com/api/v2/position/suggest/en/");
     }
-
-    @Rule
-    public ExpectedException thrown = none();
 
     /**
      * Test get location suggestions.
